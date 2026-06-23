@@ -578,8 +578,8 @@ However, after a local newspaper revealed who he really was and readers began ma
     # =====================================================================
     # NEWS & EVENTS
     # =====================================================================
-    DROPBOX = ("https://www.dropbox.com/scl/fo/0ygzxfbqrf6mvx9jiw1rr/"
-               "ANCp8e-KWbG0df2Lh-ff0Qk?rlkey=fs8ufkbkljc1ydc0oyrs3dxbb&amp;dl=0")
+    VIMEO_1 = "https://vimeo.com/1203959038"
+    VIMEO_2 = "https://vimeo.com/1203959039"
     FB_POST = ("https://www.facebook.com/karen.cox.184/posts/"
                "pfbid02pjHGPQKhUtFYmeNuahNfQatpzRBeygPuFreFt6KGGXuhn9F9mEvzcRDHkA1yEPgLl")
 
@@ -681,7 +681,8 @@ However, after a local newspaper revealed who he really was and readers began ma
             <p class="event__meta">Madeline&rsquo;s Wine Bar, Daytona Beach, Florida</p>
             <p class="event__desc">The first public presentation of <em>Giga Trouble</em> (printed September 2025), shared with friends and family. Two short videos from the evening are available: a brief clip showing the crowd, and an eight-minute discussion of the book.</p>
             <div class="event__links">
-              <a class="event__link" href="{DROPBOX}" target="_blank" rel="noopener">Watch the two videos (Dropbox) →</a>
+              <a class="event__link" href="{VIMEO_1}" target="_blank" rel="noopener">Watch the first video (Vimeo) →</a>
+              <a class="event__link" href="{VIMEO_2}" target="_blank" rel="noopener">Watch the second video (Vimeo) →</a>
             </div>
           </article>
 
