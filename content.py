@@ -184,7 +184,7 @@ After practicing law for 40 years and retiring in 2023, Pyle has turned to writi
     contact_body = '''    <section class="container contact">
       <h1>Contact Michael A. Pyle</h1>
       <p class="contact__email"><a href="mailto:info@michaelapyle.com">info@michaelapyle.com</a></p>
-      <form class="form-grid" action="mailto:info@michaelapyle.com" method="post" enctype="text/plain" aria-label="Contact form">
+      <form class="form-grid" hx-boost="false" action="mailto:info@michaelapyle.com" method="post" enctype="text/plain" aria-label="Contact form">
         <p class="form-note" id="form-help">Send a message. This form opens your email app with the details filled in.</p>
         <div class="form-row">
           <div>

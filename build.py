@@ -130,8 +130,13 @@ def page(slug_file, title, description, body, jsonld="", canonical_path="/"):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">{jsonld_block}
+  <!-- Flicker-free shell navigation: vendored locally (no runtime CDN).
+       htmx boosts link clicks into AJAX swaps; idiomorph diffs the new page
+       against the live DOM so the persistent nav/footer are left untouched. -->
+  <script src="js/htmx.min.js" defer></script>
+  <script src="js/idiomorph-ext.min.js" defer></script>
 </head>
-<body>
+<body hx-boost="true" hx-ext="morph" hx-swap="morph:innerHTML">
   <a class="skip-link" href="#main">Skip to content</a>
   {nav(active)}
   <main id="main">

@@ -37,8 +37,13 @@
     "review": {"@type": "Review", "reviewBody": "Pyle has a gifted way of making it all come to life from every page he writes.", "author": {"@type": "Organization", "name": "Louis Roppolo"}}
   }
   </script>
+  <!-- Flicker-free shell navigation: vendored locally (no runtime CDN).
+       htmx boosts link clicks into AJAX swaps; idiomorph diffs the new page
+       against the live DOM so the persistent nav/footer are left untouched. -->
+  <script src="js/htmx.min.js" defer></script>
+  <script src="js/idiomorph-ext.min.js" defer></script>
 </head>
-<body>
+<body hx-boost="true" hx-ext="morph" hx-swap="morph:innerHTML">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="nav" data-nav data-open="false">
     <div class="container nav__inner">
