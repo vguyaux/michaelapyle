@@ -649,7 +649,7 @@ However, after a local newspaper revealed who he really was and readers began ma
           <article class="event">
             <div class="event__head">
               <span class="event__type">Review</span>
-              <span class="event__date">May 1, 2026</span>
+              <span class="event__date">Friday, May 1, 2026</span>
             </div>
             <h3 class="event__title">Kirkus Reviews Features <em>White Sugar, Brown Sugar</em></h3>
             <p class="event__meta">Kirkus Reviews — Volume XCIV, No. 9</p>
