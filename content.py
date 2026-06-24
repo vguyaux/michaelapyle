@@ -580,8 +580,6 @@ However, after a local newspaper revealed who he really was and readers began ma
     # =====================================================================
     VIMEO_1 = "https://vimeo.com/1203959038"
     VIMEO_2 = "https://vimeo.com/1203959039"
-    FB_POST = ("https://www.facebook.com/karen.cox.184/posts/"
-               "pfbid02pjHGPQKhUtFYmeNuahNfQatpzRBeygPuFreFt6KGGXuhn9F9mEvzcRDHkA1yEPgLl")
 
     news_body = f'''    <section class="container page-intro">
       <h1>News &amp; Events</h1>
@@ -667,9 +665,6 @@ However, after a local newspaper revealed who he really was and readers began ma
             <h3 class="event__title">Second <em>Giga Trouble</em> Presentation — 35 Bistro</h3>
             <p class="event__meta">35 Bistro, Daytona Beach, Florida</p>
             <p class="event__desc">The second public presentation of <em>Giga Trouble</em>, which was printed in September 2025.</p>
-            <div class="event__links">
-              <a class="event__link" href="{FB_POST}" target="_blank" rel="noopener">Photos on Facebook (via Karen Cox) →</a>
-            </div>
           </article>
 
           <article class="event">
