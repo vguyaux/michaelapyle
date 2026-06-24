@@ -10,6 +10,7 @@ All body copy is reproduced verbatim from the live-site crawl. No invented
 copy. See site/CONTENT.md for the source inventory and .agents/product-marketing.md
 for the honesty rules.
 """
+from datetime import datetime
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parent
@@ -94,7 +95,7 @@ FOOTER = f'''<footer class="footer">
           <a href="white-sugar-brown-sugar.html">White Sugar, Brown Sugar</a>
         </div>
       </div>
-      <div class="footer__bottom">© 2025 Michael A. Pyle. All rights reserved.</div>
+      <div class="footer__bottom">© <span id="copyright-year">{datetime.now().year}</span> Michael A. Pyle. All rights reserved.</div>
     </div>
   </footer>'''
 

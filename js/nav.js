@@ -33,4 +33,15 @@
     var nav = document.querySelector("[data-nav]");
     if (nav) setOpen(nav, false);
   });
+
+  // Keep the footer copyright year current without anyone editing it.
+  // The HTML ships with the build year as a no-JS fallback; this updates it
+  // to the live year on load and re-applies it after each morph navigation
+  // (which would otherwise restore the static value from the swapped page).
+  function setYear() {
+    var el = document.getElementById("copyright-year");
+    if (el) el.textContent = String(new Date().getFullYear());
+  }
+  setYear();
+  document.addEventListener("htmx:afterSettle", setYear);
 })();
