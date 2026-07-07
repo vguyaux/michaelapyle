@@ -569,6 +569,8 @@ textarea.field { min-height: 160px; resize: vertical; }
 .event__meta { color: var(--ink-muted); font-style: italic; margin: 0 0 0.75rem; }
 .event__desc { color: var(--ink); margin-bottom: 1rem; }
 .event__desc:last-child { margin-bottom: 0; }
+.event__photo { margin: 1rem 0 0; border-radius: calc(var(--radius) - 4px); overflow: hidden; }
+.event__photo img { display: block; width: 100%; height: auto; }
 .event__links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
 .event__link { font-weight: 700; color: var(--g1); text-decoration: none; }
 .event__link:hover { text-decoration: underline; text-underline-offset: 2px; }

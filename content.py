@@ -665,6 +665,9 @@ However, after a local newspaper revealed who he really was and readers began ma
             <h3 class="event__title">Second <em>Giga Trouble</em> Presentation — 35 Bistro</h3>
             <p class="event__meta">35 Bistro, Daytona Beach, Florida</p>
             <p class="event__desc">The second public presentation of <em>Giga Trouble</em>, which was printed in September 2025.</p>
+            <figure class="event__photo">
+              <img src="images/35-bistro-giga-trouble.jpg" alt="Group photo at the Giga Trouble presentation and book signing at 35 Bistro, Daytona Beach" width="2048" height="1536" loading="lazy">
+            </figure>
           </article>
 
           <article class="event">
