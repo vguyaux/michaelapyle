@@ -603,7 +603,7 @@ However, after a local newspaper revealed who he really was and readers began ma
           <p class="reader-reviews-teaser__label">Press</p>
           <h3 class="reader-reviews-teaser__title"><em>White Sugar, Brown Sugar</em> Reader Reviews</h3>
           <p class="reader-reviews-teaser__meta">Online — Goodreads &amp; Amazon</p>
-          <p class="reader-reviews-teaser__desc">IndieReader has gathered a fresh round of third-party reviews of <em>White Sugar, Brown Sugar</em>, posted on Goodreads and Amazon — five so far, with more on the way. One of them calls the book &ldquo;unputdownable.&rdquo;</p>
+          <p class="reader-reviews-teaser__desc">IndieReader has gathered a fresh round of third-party reviews of <em>White Sugar, Brown Sugar</em>, posted on Goodreads and Amazon. One of them calls the book &ldquo;unputdownable.&rdquo;</p>
           <a class="reader-reviews-teaser__link" href="white-sugar-brown-sugar-reviews.html">Read the reviews →</a>
         </div>
         <h2 class="grad-text" style="color:transparent;">Who is E.G. Tripp?</h2>
@@ -674,7 +674,7 @@ However, after a local newspaper revealed who he really was and readers began ma
             </div>
             <h3 class="event__title"><em>White Sugar, Brown Sugar</em> Reader Reviews</h3>
             <p class="event__meta">Online — Goodreads &amp; Amazon</p>
-            <p class="event__desc">IndieReader has gathered a fresh round of third-party reviews of <em>White Sugar, Brown Sugar</em>, posted on Goodreads and Amazon — five so far, with more on the way. One of them calls the book &ldquo;unputdownable.&rdquo;</p>
+            <p class="event__desc">IndieReader has gathered a fresh round of third-party reviews of <em>White Sugar, Brown Sugar</em>, posted on Goodreads and Amazon. One of them calls the book &ldquo;unputdownable.&rdquo;</p>
             <div class="event__links">
               <a class="event__link" href="white-sugar-brown-sugar-reviews.html">Read the reviews →</a>
             </div>
