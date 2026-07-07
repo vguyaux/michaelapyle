@@ -6,6 +6,46 @@ links, and the author's own phrasing/typos are preserved deliberately — see
 """
 
 
+def _stars(n, variant="amazon"):
+    cls = "stars stars--goodreads" if variant == "goodreads" else "stars"
+    return f'<span class="{cls}" aria-label="{n} out of 5 stars">{"★" * n}</span>'
+
+
+def _review_paras(text):
+    return "\n".join(f"<p>{block.strip()}</p>" for block in text.strip().split("\n\n"))
+
+
+def _amazon_bar_row(label, pct):
+    return f'''<div class="review-amazon__bar-row">
+              <span>{label}</span>
+              <div class="review-amazon__bar-track"><div class="review-amazon__bar-fill" style="width:{pct}%"></div></div>
+              <span>{pct}%</span>
+            </div>'''
+
+
+def _amazon_sidebar(rating_text, rating_count, bars, buy_href):
+    bar_rows = "\n".join(_amazon_bar_row(label, pct) for label, pct in bars)
+    return f'''<aside class="review-amazon__sidebar">
+            <h3>Product Details</h3>
+            <div class="review-amazon__product">
+              <img src="images/white-sugar-cover.avif" alt="White Sugar, Brown Sugar book cover" width="72">
+              <div>
+                <p class="review-amazon__product-title">White Sugar, Brown Sugar</p>
+                <p class="review-amazon__product-author">by Michael A. Pyle</p>
+              </div>
+            </div>
+            <div class="review-amazon__rating-summary">
+              {_stars(5)}
+              <span class="review-amazon__rating-text">{rating_text}</span>
+            </div>
+            <p class="review-amazon__rating-count">{rating_count}</p>
+            <div class="review-amazon__bars">
+              {bar_rows}
+            </div>
+            <a class="review-amazon__buy" href="{buy_href}" target="_blank" rel="noopener">See All Buying Options</a>
+          </aside>'''
+
+
 def build_pages(g):
     page = g["page"]
     nav = g["nav"]
@@ -559,7 +599,7 @@ However, after a local newspaper revealed who he really was and readers began ma
         {paras(wsbs_review)}
         </div>
         <p class="attribution">— Kirkus Review</p>
-        <img src="images/wsbs-screenshot.png" alt="White Sugar, Brown Sugar reader review" width="562" style="margin:1.5rem 0;">
+        {cta_link("white-sugar-brown-sugar-reviews.html", "More reader reviews", "Read White Sugar, Brown Sugar reader reviews on Amazon and Goodreads")}
         <h2 class="grad-text" style="color:transparent;">Who is E.G. Tripp?</h2>
         {paras(wsbs_tripp)}
         <img src="images/white-sugar-cover.avif" alt="White Sugar, Brown Sugar book cover" width="600" style="margin:1.5rem 0;max-width:260px;">
@@ -719,6 +759,245 @@ However, after a local newspaper revealed who he really was and readers began ma
         news_body,
         jsonld=events_ld,
         canonical_path="/news",
+    )
+
+    # =====================================================================
+    # WHITE SUGAR, BROWN SUGAR — READER REVIEWS
+    # =====================================================================
+    WSBS_REVIEWS_AMZN = "https://a.co/d/07McNu4"
+
+    alejandro_body = """A yacht club basin in Daytona Beach becomes the unlikely meeting point in WHITE SUGAR, BROWN SUGAR — Jude fishing from the docks beside the moored boats he'll never own, Roosevelt and his family casting cane poles from the public wall on the other side of the divide segregation drew through the town. Michael A. Pyle builds the novel's entire moral architecture from that single image: two boys positioned on opposite sides of a line neither chose, finding in each other something the line was designed to prevent. The friendship that develops carries the book through the damage, surviving arrests, an overdose witnessed at close range, and the particular cruelty of watching someone you love choose the same self-destruction that you did. What struck me reading this was how evenly Pyle distributes the damage. Jude's mother disappears into alcohol while his father retreats into a competent, distant kind of failure. Roosevelt's mother is lost to addiction in a different register entirely, shaped by poverty and the absence of any safety net. Both boys inherit a lot to avoid exactly what consumes them, and both break it, which gives the novel's central tragedy its inevitability without ever feeling manipulative.
+
+The depiction of addiction itself is the book's most unflinching achievement. Pyle catalogues the self-justifications, the resentment, the shallow bliss, with a precision that reads like testimony. The drug scenes are visceral enough to unsettle, and the slower recovery of Jude's sobriety is rendered with the same patience the factor, more chemical descent into harder substances shows elsewhere. Roosevelt's hard-won sobriety emerges from Jude's in ways that feel earned— you buy the floor sooner, the other has to keep falling. The Florida setting, with its segregated signage and casual cruelty from those meant to enforce order, anchors the personal story in something larger without letting that larger story crowd out the friendship at its centre.
+
+WHITE SUGAR, BROWN SUGAR earns its title on every register it's written in — racial, chemical, generational. Pyle has written something that hurts to read and refuses to let that hurt go to waste."""
+
+    lizzy_body = """White Sugar, Brown Sugar is an emotional and heartbreaking tale of friendship, addiction, loss, and hope. The story begins in the 1960s when a young black boy and a young white boy strike up an unlikely friendship. Both boys come from families struggling with addictions; this story shows the generational cycle of crime and addictions, yet also shows hope of recovery and rehabilitation. This novel has powerful storytelling that is hauntingly realistic and accurate. It highlights the darkness people struggle with, which is often hushed up and ignored.
+
+From the get-go, this book is immersive with flawed characters, dark themes, and inspirational messages. Race, social class, and differing opportunities play a part in this book, and the author portrays an accurate historical depiction of the 1960s with the racial divide layered into the writing. Yet despite this, we see how addictions don't see race, how anyone can fall victim to them. Further, throughout the book, the author does an amazing job of breaking everything down to a simple message. Everyone is human. Regardless of race, friendships last a lifetime can be made; people with seemingly better opportunities can still suffer, and we can all hit the same rock bottom.
+
+I highly recommend this book. It is artfully written, so much so that it feels like it could be based on real people. It is compelling and emotional and, in part, uncomfortable, but it is a very human story that shows the darker parts of life and history."""
+
+    antony_body = """White Sugar, Brown Sugar is a metaphorically befitting title, especially considering the book's coexistence narrative at a time when intolerance was a norm.
+
+The main characters are two young boys about eleven years old: Roosevelt Harris is a black boy from a poor background, while David 'Jude' Armstrong is a white privileged boy. The two opposites meet while fishing at a streetside of a basin and they instantly hit off despite discouragement from their respective families. Nevertheless, the boys' friendship grows by leaps and bounds, shaped by their kindred spirits, peer pressure, substance dependence and addiction, relapses and legal problems, despite trying to stay away from the very vices affecting their mothers.
+
+I liked how the adult Roosevelt became influential, including coaching kids in danger and giving back to the community through juvenile centers and rehab facilities. I also liked how he supported his longtime friend Jude's family when they needed a shoulder to lean on.
+
+There are some strong words and sensitive scenes that, alongside the word choice, I nevertheless found realistic.
+
+This insightful book lays bare the social, legal, physical, mental and financial costs of substance abuse."""
+
+    raisa_body = """WHITE SUGAR, BROWN SUGAR is a powerful and often heartbreaking novel that explores friendship, addiction, and resilience against the backdrop of a deeply divided America. Set in segregated Florida, the story follows Jude and Roosevelt, two boys from vastly different backgrounds whose bond defies the racial boundaries imposed by society. As they grow older, both find themselves caught in cycles of substance abuse, family dysfunction, and self-destruction, creating a narrative that is as emotionally challenging as it is compelling. Michael A. Pyle does not shy away from the harsh realities of addiction, portraying its devastating impact on individuals and the people who care about them.
+
+What makes the novel particularly effective is its refusal to reduce its characters to simple labels or stereotypes. Broken families, absent parents, and generational struggles shape both boys in different ways, yet their friendship remains a constant source of strength throughout the story. I found the depictions of addiction especially convincing because they capture not only the physical dependence but also the denial, guilt, and desperation that accompany it. The novel's historical setting also adds depth, illustrating how race and class influenced opportunities while showing that suffering and addiction recognize no boundaries.
+
+At its core, this is a story about hope surviving in the darkest of circumstances. I was left with a deep appreciation for the novel's message that recovery, redemption, and human connection remain possible even after years of loss and hardship."""
+
+    naomi_body = """White Sugar, Brown Sugar is an emotional and heartbreaking tale of friendship, addiction, loss, and hope. The story begins in the 1960s when a young black boy and a young white boy strike up an unlikely friendship. Both boys come from families struggling with addictions; this story shows the generational cycle of crime and addictions, yet also shows hope of recovery and rehabilitation. This novel has powerful storytelling that is hauntingly realistic and accurate. It highlights the darkness people struggle with, which is often hushed up and ignored.
+
+From the get-go, this book is immersive with flawed characters, dark themes, and inspirational messages. Race, social class, and differing opportunities play a part in this book, and the author portrays an accurate historical depiction of the 1960s with the racial divide layered into the writing. Yet despite this, we see how addictions don't see race, how anyone can fall victim to them. Further, throughout the book, the author does an amazing job of breaking everything down to a simple message. Everyone is human. Regardless of race, friendships that last a lifetime can be made; people with seemingly better opportunities can still suffer, and we can all hit the same rock bottom.
+
+I highly recommend this book. It is artfully written, so much so that it feels like it could be based on real people. It is compelling and emotional and, in part, uncomfortable, but it is a very human story that shows the darker parts of life and history."""
+
+    megan_body = """White Sugar, Brown Sugar is one of those books that really pulled me in emotionally. I expected a story about friendship set during a time of racial division, but what I found was an honest, heartbreaking look at addiction, forgiveness, and the people who stand by us when life falls apart.
+
+Jude and Roosevelt felt like real people. Their friendship begins in childhood and carries them through broken families, bad decisions, addiction, and unimaginable loss. I found myself rooting for both of them, even when they made frustrating choices, because the author does such a good job showing how addiction can slowly take over every part of someone's life.
+
+The story never tried to sugarcoat recovery or make redemption seem easy. It shows the setbacks, the guilt, and the hard work it takes to rebuild a life, making the hopeful moments feel genuinely earned. The historical setting adds depth to the story, highlighting the realities of segregation while also reinforcing that pain, addiction, and the desire for a better life don't discriminate.
+
+Even though this is an emotional read with some difficult moments, I closed the book feeling hopeful. At its core, this is a story about friendship, resilience, and the power of having someone who refuses to give up on you. If you enjoy character-driven historical fiction that isn't afraid to tackle difficult subjects while still leaving you with hope, I think this is well worth reading."""
+
+    wsbs_reviews_body = f'''    <section class="container reviews-page">
+      <div class="reviews-page__intro">
+        <h1>White Sugar, Brown Sugar Reviews</h1>
+        <p class="reviews-page__lead">Reader reviews gathered from Amazon and Goodreads, reproduced here as they appeared on each platform.</p>
+        <a class="reviews-page__back" href="white-sugar-brown-sugar.html">&larr; Back to <em>White Sugar, Brown Sugar</em></a>
+      </div>
+
+      <div class="reviews-stack">
+
+        <div>
+          <span class="review-card__platform review-card__platform--amazon">Amazon.com</span>
+          <article class="review-card review-amazon">
+            <div class="review-amazon__grid">
+              <div class="review-amazon__main">
+                <h2 class="review-amazon__heading">Customer Review</h2>
+                <p class="review-amazon__reviewer">Alejandro Soto</p>
+                {_stars(5)}
+                <h3 class="review-amazon__title">Two boys, one undertow, and many kinds of drowning</h3>
+                <p class="review-amazon__meta">Reviewed in the United States on June 22, 2026 <span class="review-amazon__verified">Verified Purchase</span></p>
+                <div class="review-amazon__body">
+                  {_review_paras(alejandro_body)}
+                </div>
+                <p class="review-amazon__actions"><span>Helpful</span><span>Report</span></p>
+              </div>
+              {_amazon_sidebar("4.9 out of 5 stars", "47 global ratings", [("5 star", 87), ("4 star", 13), ("3 star", 0), ("2 star", 0), ("1 star", 0)], WSBS_REVIEWS_AMZN)}
+            </div>
+          </article>
+        </div>
+
+        <div>
+          <span class="review-card__platform review-card__platform--amazon">Amazon.co.uk</span>
+          <article class="review-card review-amazon">
+            <div class="review-amazon__grid">
+              <div class="review-amazon__main">
+                <h2 class="review-amazon__heading">Customer Review</h2>
+                <p class="review-amazon__reviewer">Lizzy</p>
+                {_stars(5)}
+                <h3 class="review-amazon__title">An immersive and powerful read.</h3>
+                <p class="review-amazon__meta">Reviewed in the United Kingdom on 29 June 2026 <span class="review-amazon__verified">Verified Purchase</span></p>
+                <div class="review-amazon__body">
+                  {_review_paras(lizzy_body)}
+                </div>
+                <p class="review-amazon__actions"><span>Helpful</span><span>Report</span></p>
+              </div>
+              {_amazon_sidebar("4.8 out of 5", "28 global ratings", [("5 star", 85), ("4 star", 15), ("3 star", 0), ("2 star", 0), ("1 star", 0)], WSBS_REVIEWS_AMZN)}
+            </div>
+          </article>
+        </div>
+
+        <div>
+          <span class="review-card__platform review-card__platform--goodreads">Goodreads</span>
+          <article class="review-card review-goodreads review-goodreads--page">
+            <div class="review-goodreads__header">
+              <a href="#">Antony Wairiuko&rsquo;s Reviews</a> &rsaquo; White Sugar, Brown Sugar
+            </div>
+            <div class="review-goodreads__grid">
+              <div class="review-goodreads__cover">
+                <img src="images/white-sugar-cover.avif" alt="White Sugar, Brown Sugar book cover" width="120">
+                <span class="review-goodreads__cover-btn">Want to Read</span>
+              </div>
+              <div class="review-goodreads__content">
+                <h2 class="review-goodreads__book-title">White Sugar, Brown Sugar</h2>
+                <p class="review-goodreads__book-author">by Michael A. Pyle</p>
+                <p class="review-goodreads__byline">Antony Wairiuko&rsquo;s review</p>
+                <div class="review-goodreads__top">
+                  {_stars(5, "goodreads")}
+                  <span class="review-goodreads__date">Jun 13, 2026</span>
+                </div>
+                <h3 class="review-goodreads__title">Cautionary</h3>
+                <div class="review-goodreads__body">
+                  {_review_paras(antony_body)}
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div>
+          <span class="review-card__platform review-card__platform--goodreads">Goodreads</span>
+          <article class="review-card review-goodreads review-goodreads--list">
+            <div class="review-goodreads__grid">
+              <div class="review-goodreads__cover">
+                <img src="images/white-sugar-cover.avif" alt="White Sugar, Brown Sugar book cover" width="120">
+                <span class="review-goodreads__cover-btn">Want to Read</span>
+              </div>
+              <div class="review-goodreads__profile">
+                <div class="review-goodreads__avatar" aria-hidden="true">&#128214;</div>
+                <div>
+                  <p class="review-goodreads__name">Raisa Mbalule</p>
+                  <p class="review-goodreads__stats">113 reviews &middot; 11 followers</p>
+                  <span class="review-goodreads__follow">Follow</span>
+                </div>
+              </div>
+              <div class="review-goodreads__content">
+                <div class="review-goodreads__top">
+                  {_stars(5, "goodreads")}
+                  <span class="review-goodreads__date">June 9, 2026</span>
+                </div>
+                <h3 class="review-goodreads__title">A Powerful Story of Friendship, Addiction, and Redemption</h3>
+                <div class="review-goodreads__body">
+                  {_review_paras(raisa_body)}
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div>
+          <span class="review-card__platform review-card__platform--goodreads">Goodreads</span>
+          <article class="review-card review-goodreads review-goodreads--list">
+            <div class="review-goodreads__grid">
+              <div class="review-goodreads__cover">
+                <img src="images/white-sugar-cover.avif" alt="White Sugar, Brown Sugar book cover" width="120">
+                <span class="review-goodreads__cover-btn">Read</span>
+              </div>
+              <div class="review-goodreads__profile">
+                <div class="review-goodreads__avatar" aria-hidden="true">&#128100;</div>
+                <div>
+                  <p class="review-goodreads__name">Naomi</p>
+                  <p class="review-goodreads__stats">133 reviews &middot; 9 followers</p>
+                  <span class="review-goodreads__follow">Follow</span>
+                </div>
+              </div>
+              <div class="review-goodreads__content">
+                <div class="review-goodreads__top">
+                  {_stars(5, "goodreads")}
+                  <span class="review-goodreads__date">June 29, 2026</span>
+                </div>
+                <div class="review-goodreads__body">
+                  {_review_paras(naomi_body)}
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div>
+          <span class="review-card__platform review-card__platform--goodreads">Goodreads</span>
+          <article class="review-card review-goodreads review-goodreads--list">
+            <div class="review-goodreads__grid">
+              <div class="review-goodreads__cover">
+                <img src="images/white-sugar-cover.avif" alt="White Sugar, Brown Sugar book cover" width="120">
+                <span class="review-goodreads__cover-btn">Want to Read</span>
+              </div>
+              <div class="review-goodreads__profile">
+                <div class="review-goodreads__avatar" aria-hidden="true">&#128214;</div>
+                <div>
+                  <p class="review-goodreads__name">Megan</p>
+                  <p class="review-goodreads__stats">128 reviews &middot; 5 followers</p>
+                  <span class="review-goodreads__follow">Follow</span>
+                </div>
+              </div>
+              <div class="review-goodreads__content">
+                <div class="review-goodreads__top">
+                  {_stars(5, "goodreads")}
+                  <span class="review-goodreads__date">June 29, 2026</span>
+                </div>
+                <div class="review-goodreads__body">
+                  {_review_paras(megan_body)}
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>'''
+
+    wsbs_reviews_ld = '''{
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "White Sugar, Brown Sugar",
+    "author": {"@type": "Person", "name": "Michael A. Pyle"},
+    "review": [
+      {"@type": "Review", "author": {"@type": "Person", "name": "Alejandro Soto"}, "reviewBody": "Two boys, one undertow, and many kinds of drowning", "reviewRating": {"@type": "Rating", "ratingValue": 5}},
+      {"@type": "Review", "author": {"@type": "Person", "name": "Lizzy"}, "reviewBody": "An immersive and powerful read.", "reviewRating": {"@type": "Rating", "ratingValue": 5}},
+      {"@type": "Review", "author": {"@type": "Person", "name": "Antony Wairiuko"}, "reviewBody": "Cautionary", "reviewRating": {"@type": "Rating", "ratingValue": 5}},
+      {"@type": "Review", "author": {"@type": "Person", "name": "Raisa Mbalule"}, "reviewBody": "A Powerful Story of Friendship, Addiction, and Redemption", "reviewRating": {"@type": "Rating", "ratingValue": 5}},
+      {"@type": "Review", "author": {"@type": "Person", "name": "Naomi"}, "reviewRating": {"@type": "Rating", "ratingValue": 5}},
+      {"@type": "Review", "author": {"@type": "Person", "name": "Megan"}, "reviewRating": {"@type": "Rating", "ratingValue": 5}}
+    ]
+  }'''
+
+    pages["white-sugar-brown-sugar-reviews.html"] = page(
+        "white-sugar-brown-sugar-reviews.html",
+        "White Sugar, Brown Sugar Reviews — Michael A. Pyle",
+        "Reader reviews of White Sugar, Brown Sugar by Michael A. Pyle — reproduced from Amazon and Goodreads.",
+        wsbs_reviews_body,
+        jsonld=wsbs_reviews_ld,
+        canonical_path="/white-sugar-brown-sugar-reviews",
     )
 
     # =====================================================================

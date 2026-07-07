@@ -581,6 +581,208 @@ textarea.field { min-height: 160px; resize: vertical; }
 }
 
 /* ========================================================================
+   READER REVIEWS (platform-styled cards)
+   ======================================================================== */
+.reviews-page { padding-block: var(--step); }
+.reviews-page__intro { margin-bottom: 2.5rem; max-width: 62ch; }
+.reviews-page__intro h1 { font-size: clamp(2rem, 6vw, 3rem); margin-bottom: 0.5rem; }
+.reviews-page__lead { color: var(--ink-muted); margin-bottom: 1.25rem; }
+.reviews-page__back { font-weight: 700; color: var(--g1); text-decoration: none; }
+.reviews-page__back:hover { text-decoration: underline; text-underline-offset: 2px; }
+.reviews-stack { display: grid; gap: 2.5rem; }
+
+/* shared */
+.review-card { border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); }
+.review-card__platform {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+.review-card__platform--amazon { background: #232f3e; color: #fff; font-family: "Amazon Ember", Arial, sans-serif; }
+.review-card__platform--goodreads { background: #d7e5d8; color: #3b5249; font-family: Lato, "Helvetica Neue", Arial, sans-serif; }
+.stars { color: #de7921; letter-spacing: 0.05em; font-size: 1.1rem; line-height: 1; }
+.stars--goodreads { color: #f4a460; }
+
+/* Amazon */
+.review-amazon {
+  font-family: "Amazon Ember", Arial, Helvetica, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #0f1111;
+  background: #fff;
+  border: 1px solid #d5d9d9;
+}
+.review-amazon__grid {
+  display: grid;
+  gap: 0;
+}
+.review-amazon__main { padding: 1.25rem 1.5rem; }
+.review-amazon__heading {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e7e7e7;
+}
+.review-amazon__reviewer { font-weight: 700; margin-bottom: 0.35rem; }
+.review-amazon__title { font-size: 1.05rem; font-weight: 700; margin: 0.35rem 0 0.5rem; }
+.review-amazon__meta { color: #565959; font-size: 0.875rem; margin-bottom: 0.75rem; }
+.review-amazon__verified {
+  display: inline-block;
+  color: #c45500;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-left: 0.35rem;
+}
+.review-amazon__body p { margin: 0 0 1rem; }
+.review-amazon__body p:last-child { margin-bottom: 0; }
+.review-amazon__actions { margin-top: 1rem; font-size: 0.8125rem; color: #007185; }
+.review-amazon__actions span + span::before { content: " | "; color: #d5d9d9; }
+
+.review-amazon__sidebar {
+  background: #f7fafa;
+  border-top: 1px solid #d5d9d9;
+  padding: 1.25rem 1.5rem;
+}
+.review-amazon__sidebar h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  font-family: inherit;
+}
+.review-amazon__product { display: flex; gap: 0.85rem; margin-bottom: 1rem; }
+.review-amazon__product img {
+  width: 72px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+.review-amazon__product-title { font-weight: 700; font-size: 0.9rem; margin: 0 0 0.15rem; }
+.review-amazon__product-author { color: #565959; font-size: 0.8125rem; margin: 0; }
+.review-amazon__rating-summary { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem; }
+.review-amazon__rating-summary .stars { font-size: 1rem; }
+.review-amazon__rating-text { font-size: 0.875rem; }
+.review-amazon__rating-count { color: #007185; font-size: 0.8125rem; margin-bottom: 0.85rem; }
+.review-amazon__bars { display: grid; gap: 0.35rem; font-size: 0.75rem; }
+.review-amazon__bar-row { display: grid; grid-template-columns: 3.5rem 1fr 2.25rem; align-items: center; gap: 0.5rem; }
+.review-amazon__bar-track { height: 18px; background: #e3e6e6; border-radius: 2px; overflow: hidden; }
+.review-amazon__bar-fill { height: 100%; background: #de7921; border-radius: 2px; }
+.review-amazon__buy {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.45rem 0.85rem;
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #0f1111;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+}
+
+/* Goodreads */
+.review-goodreads {
+  font-family: Lato, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: #333;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+}
+.review-goodreads__header {
+  background: #f4f1ea;
+  border-bottom: 1px solid #d8d8d8;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.8rem;
+  color: #00635d;
+}
+.review-goodreads__header a { color: #00635d; text-decoration: none; }
+.review-goodreads__header a:hover { text-decoration: underline; }
+.review-goodreads__grid {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.25rem;
+}
+.review-goodreads__cover img {
+  width: 120px;
+  border-radius: 2px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+}
+.review-goodreads__cover-btn {
+  display: inline-block;
+  margin-top: 0.65rem;
+  padding: 0.4rem 1rem;
+  background: #00635d;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.review-goodreads__profile { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 1rem; }
+.review-goodreads__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e8e8e8;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+  color: #999;
+}
+.review-goodreads__name { font-weight: 700; font-size: 1rem; margin: 0 0 0.15rem; }
+.review-goodreads__stats { color: #999; font-size: 0.8rem; margin: 0; }
+.review-goodreads__follow {
+  display: inline-block;
+  margin-top: 0.45rem;
+  padding: 0.3rem 0.85rem;
+  background: #333;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.review-goodreads__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem; }
+.review-goodreads__date { color: #999; font-size: 0.8rem; }
+.review-goodreads__title { font-weight: 700; font-size: 1.05rem; margin: 0 0 0.65rem; color: #333; }
+.review-goodreads__body p { margin: 0 0 1rem; }
+.review-goodreads__body p:last-child { margin-bottom: 0; }
+
+.review-goodreads--page .review-goodreads__grid {
+  grid-template-columns: 120px 1fr;
+}
+.review-goodreads--page .review-goodreads__book-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 0.15rem;
+  color: #333;
+}
+.review-goodreads--page .review-goodreads__book-author { color: #00635d; font-size: 0.9rem; margin: 0 0 1rem; }
+.review-goodreads--page .review-goodreads__byline { color: #999; font-size: 0.85rem; margin-bottom: 0.65rem; }
+
+@media (min-width: 720px) {
+  .review-amazon__grid { grid-template-columns: 1fr 260px; }
+  .review-amazon__sidebar { border-top: 0; border-left: 1px solid #d5d9d9; }
+  .review-goodreads__grid { grid-template-columns: 120px 1fr; }
+  .review-goodreads__content { grid-column: 2; }
+}
+
+@media (min-width: 940px) {
+  .review-goodreads--list .review-goodreads__grid {
+    grid-template-columns: 120px 140px 1fr;
+  }
+  .review-goodreads--list .review-goodreads__profile { grid-column: 2; margin-bottom: 0; }
+  .review-goodreads--list .review-goodreads__content { grid-column: 3; }
+}
+
+/* ========================================================================
    404
    ======================================================================== */
 .notfound {
