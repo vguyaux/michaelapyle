@@ -666,7 +666,7 @@ However, after a local newspaper revealed who he really was and readers began ma
               <span class="event__type">Press</span>
               <span class="event__date">June 2026</span>
             </div>
-            <h3 class="event__title">New Reader Reviews via IndieReader</h3>
+            <h3 class="event__title"><em>White Sugar, Brown Sugar</em> Reader Reviews</h3>
             <p class="event__meta">Online — Goodreads &amp; Amazon</p>
             <p class="event__desc">IndieReader has gathered a fresh round of third-party reviews of <em>White Sugar, Brown Sugar</em>, posted on Goodreads and Amazon — five so far, with more on the way. One of them calls the book &ldquo;unputdownable.&rdquo;</p>
           </article>
@@ -682,6 +682,9 @@ However, after a local newspaper revealed who he really was and readers began ma
             <div class="event__links">
               <a class="event__link" href="https://indiereader.com/irda26-winners/" target="_blank" rel="noopener">IRDA 2026 winners →</a>
             </div>
+            <figure class="event__award">
+              <img src="images/irda-winner-badge.webp" alt="IndieReader Discovery Awards Winner seal" width="1441" height="1440" loading="lazy">
+            </figure>
           </article>
 
           <article class="event">
