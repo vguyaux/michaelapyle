@@ -599,7 +599,13 @@ However, after a local newspaper revealed who he really was and readers began ma
         {paras(wsbs_review)}
         </div>
         <p class="attribution">— Kirkus Review</p>
-        {cta_link("white-sugar-brown-sugar-reviews.html", "More reader reviews", "Read White Sugar, Brown Sugar reader reviews on Amazon and Goodreads")}
+        <div class="reader-reviews-teaser">
+          <p class="reader-reviews-teaser__label">Press</p>
+          <h3 class="reader-reviews-teaser__title"><em>White Sugar, Brown Sugar</em> Reader Reviews</h3>
+          <p class="reader-reviews-teaser__meta">Online — Goodreads &amp; Amazon</p>
+          <p class="reader-reviews-teaser__desc">IndieReader has gathered a fresh round of third-party reviews of <em>White Sugar, Brown Sugar</em>, posted on Goodreads and Amazon — five so far, with more on the way. One of them calls the book &ldquo;unputdownable.&rdquo;</p>
+          <a class="reader-reviews-teaser__link" href="white-sugar-brown-sugar-reviews.html">Read the reviews →</a>
+        </div>
         <h2 class="grad-text" style="color:transparent;">Who is E.G. Tripp?</h2>
         {paras(wsbs_tripp)}
         <img src="images/white-sugar-cover.avif" alt="White Sugar, Brown Sugar book cover" width="600" style="margin:1.5rem 0;max-width:260px;">

@@ -455,6 +455,30 @@ p { margin: 0 0 1rem; }
 .aside .recognition img { margin: 0.75rem 0; }
 .aside .award-num { font-size: 3rem; color: var(--g1); margin: 0; line-height: 1; }
 .aside .award-label { font-size: 1.1rem; margin: 0 0 1.5rem; }
+.reader-reviews-teaser {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  margin: 1.75rem 0 2rem;
+  background: var(--off-white);
+}
+.reader-reviews-teaser__label {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  background: var(--gradient);
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  margin: 0 0 0.85rem;
+}
+.reader-reviews-teaser__title { font-size: 1.15rem; margin: 0 0 0.35rem; line-height: 1.3; }
+.reader-reviews-teaser__meta { color: var(--ink-muted); font-style: italic; font-size: 0.95rem; margin: 0 0 0.75rem; }
+.reader-reviews-teaser__desc { font-size: 0.98rem; margin: 0 0 1rem; color: var(--ink); }
+.reader-reviews-teaser__link { font-weight: 700; color: var(--g1); text-decoration: none; }
+.reader-reviews-teaser__link:hover { text-decoration: underline; text-underline-offset: 2px; }
 .essay-figure { display: block; text-decoration: none; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 1rem; }
 
 /* ========================================================================
@@ -571,6 +595,8 @@ textarea.field { min-height: 160px; resize: vertical; }
 .event__desc:last-child { margin-bottom: 0; }
 .event__photo { margin: 1rem 0 0; border-radius: calc(var(--radius) - 4px); overflow: hidden; }
 .event__photo img { display: block; width: 100%; height: auto; }
+.event__award { margin: 1.25rem 0 0; text-align: center; }
+.event__award img { display: inline-block; width: 100%; max-width: 220px; height: auto; }
 .event__links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
 .event__link { font-weight: 700; color: var(--g1); text-decoration: none; }
 .event__link:hover { text-decoration: underline; text-underline-offset: 2px; }
