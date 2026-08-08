@@ -73,7 +73,7 @@ def build_pages(g):
           {cta_button("contact.html", "Contact", "Contact Michael A. Pyle")}
           <div class="badges">
             <div class="badge badge--stack">
-              <img src="images/living-now-finalist.webp" alt="Living Now Book Awards Finalist seal" width="72">
+              <img src="images/living-now-finalist.webp" alt="Living Now Book Awards Finalist seal" width="72" style="filter:grayscale(1);">
               <div>
                 <p class="badge__kicker">Fiction · Evergreen Categories</p>
                 <p class="badge__title">Living Now Silver Medal &amp; Finalist</p>
@@ -575,7 +575,7 @@ However, after a local newspaper revealed who he really was and readers began ma
       <aside class="aside recognition">
         <h2>Recognition</h2>
         <div class="badge" style="border:0;padding:0;margin:0 0 1.5rem;">
-          <img src="images/living-now-finalist.webp" alt="Living Now Book Awards Finalist seal" width="72">
+          <img src="images/living-now-finalist.webp" alt="Living Now Book Awards Finalist seal" width="72" style="filter:grayscale(1);">
           <div>
             <p class="aside-label" style="text-transform:uppercase;letter-spacing:.1em;font-style:normal;font-size:.72rem;">Fiction · Evergreen Categories</p>
             <p style="font-weight:900;margin:.15rem 0;">Silver Medal &amp; Finalist — 2026 Living Now Book Awards</p>
