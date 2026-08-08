@@ -699,6 +699,7 @@ However, after a local newspaper revealed who he really was and readers began ma
           <article class="event">
             <div class="event__head">
               <span class="event__type">Award</span>
+              <span class="event__date">August 7, 2026</span>
             </div>
             <h3 class="event__title">Silver Medal &amp; Finalist — Living Now Book Awards (Fiction)</h3>
             <p class="event__meta">Living Now Book Awards — Evergreen Categories</p>
