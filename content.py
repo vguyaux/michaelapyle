@@ -71,12 +71,22 @@ def build_pages(g):
           <h1>A Passion for Writing Fiction</h1>
           <p class="hero__lead">Michael A. Pyle draws on fiction writing, linguistics, law and international travel to weave multi-cultural, suspense and inspirational narratives.</p>
           {cta_button("contact.html", "Contact", "Contact Michael A. Pyle")}
-          <div class="badge">
-            <img src="images/american-legacy-bw.png" alt="American Legacy Book Awards seal" width="72">
-            <div>
-              <p class="badge__kicker">Inspirational Fiction Category</p>
-              <p class="badge__title">American Legacy Book Finalist</p>
-              <p class="badge__for">For <em>White Sugar, Brown Sugar</em></p>
+          <div class="badges">
+            <div class="badge badge--stack">
+              <img src="images/living-now-finalist.webp" alt="Living Now Book Awards Finalist seal" width="72">
+              <div>
+                <p class="badge__kicker">Fiction · Evergreen Categories</p>
+                <p class="badge__title">Living Now Silver Medal &amp; Finalist</p>
+                <p class="badge__for">2026 · For <em>White Sugar, Brown Sugar</em></p>
+              </div>
+            </div>
+            <div class="badge badge--stack">
+              <img src="images/american-legacy-bw.png" alt="American Legacy Book Awards seal" width="72">
+              <div>
+                <p class="badge__kicker">Inspirational Fiction Category</p>
+                <p class="badge__title">American Legacy Book Finalist</p>
+                <p class="badge__for">For <em>White Sugar, Brown Sugar</em></p>
+              </div>
             </div>
           </div>
         </div>
