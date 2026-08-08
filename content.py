@@ -77,7 +77,7 @@ def build_pages(g):
               <div>
                 <p class="badge__kicker">Fiction · Evergreen Categories</p>
                 <p class="badge__title">Living Now Silver Medal &amp; Finalist</p>
-                <p class="badge__for">2026 · For <em>White Sugar, Brown Sugar</em></p>
+                <p class="badge__for">For <em>White Sugar, Brown Sugar</em></p>
               </div>
             </div>
             <div class="badge badge--stack">
