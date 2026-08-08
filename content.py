@@ -669,6 +669,22 @@ However, after a local newspaper revealed who he really was and readers began ma
 
           <article class="event">
             <div class="event__head">
+              <span class="event__type">Award</span>
+              <span class="event__date">August 7, 2026</span>
+            </div>
+            <h3 class="event__title">Silver Medal &amp; Finalist — Living Now Book Awards (Fiction)</h3>
+            <p class="event__meta">Living Now Book Awards — Evergreen Categories</p>
+            <p class="event__desc"><em>White Sugar, Brown Sugar</em> won Silver in the Fiction category of the 2026 Living Now Book Awards, Evergreen Categories.</p>
+            <div class="event__links">
+              <a class="event__link" href="https://docs.google.com/document/d/1tAvvGnP0TlWBN3D6LCzTqhLDhv1TsAX0U9FqhE_EoYk/edit?tab=t.0#heading=h.j0e4uj3ajj89" target="_blank" rel="noopener">See the results (Evergreen, EB 6 — page 7) →</a>
+            </div>
+            <figure class="event__award">
+              <img src="images/living-now-finalist.webp" alt="Living Now Book Awards Finalist seal" width="640" height="640" loading="lazy">
+            </figure>
+          </article>
+
+          <article class="event">
+            <div class="event__head">
               <span class="event__type">Press</span>
               <span class="event__date">June 2026</span>
             </div>
@@ -693,22 +709,6 @@ However, after a local newspaper revealed who he really was and readers began ma
             </div>
             <figure class="event__award">
               <img src="images/irda-winner-badge.webp" alt="IndieReader Discovery Awards Winner seal" width="1441" height="1440" loading="lazy">
-            </figure>
-          </article>
-
-          <article class="event">
-            <div class="event__head">
-              <span class="event__type">Award</span>
-              <span class="event__date">August 7, 2026</span>
-            </div>
-            <h3 class="event__title">Silver Medal &amp; Finalist — Living Now Book Awards (Fiction)</h3>
-            <p class="event__meta">Living Now Book Awards — Evergreen Categories</p>
-            <p class="event__desc"><em>White Sugar, Brown Sugar</em> won Silver in the Fiction category of the 2026 Living Now Book Awards, Evergreen Categories.</p>
-            <div class="event__links">
-              <a class="event__link" href="https://docs.google.com/document/d/1tAvvGnP0TlWBN3D6LCzTqhLDhv1TsAX0U9FqhE_EoYk/edit?tab=t.0#heading=h.j0e4uj3ajj89" target="_blank" rel="noopener">See the results (Evergreen, EB 6 — page 7) →</a>
-            </div>
-            <figure class="event__award">
-              <img src="images/living-now-finalist.webp" alt="Living Now Book Awards Finalist seal" width="640" height="640" loading="lazy">
             </figure>
           </article>
 
